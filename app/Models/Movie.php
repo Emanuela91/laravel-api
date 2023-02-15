@@ -10,8 +10,8 @@ class Movie extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'year',
-        'cashOut',
+        'name' => fake()->words(rand(1, 3), true),
+        'year' => fake()->year(),
+        'cashOut' => fake()->boolean(),
     ];
 }
