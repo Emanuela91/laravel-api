@@ -13,4 +13,10 @@ class Genre extends Model
         'name',
         'description',
     ];
+
+    public function movies()
+    {
+
+        return $this->hasMany(Movie::class);
+    }
 }

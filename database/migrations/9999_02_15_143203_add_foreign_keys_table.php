@@ -12,10 +12,10 @@ return new class extends Migration {
     {
         Schema::table('movies', function (Blueprint $table) {
 
-            $table->foreignId('tag_id')
+            $table->foreignId('genre_id')
                 ->constrained();
         });
-        Schema::table('tag_movie', function (Blueprint $table) {
+        Schema::table('movie_tag', function (Blueprint $table) {
 
             $table->foreignId('tag_id')
                 ->constrained();
@@ -33,7 +33,7 @@ return new class extends Migration {
 
             $table->dropForeign('movies_tag_id_foreign');
         });
-        Schema::table('tag_movie', function (Blueprint $table) {
+        Schema::table('movie_tag', function (Blueprint $table) {
 
             $table->dropForeign('category_product_tag_id_foreign');
             $table->dropForeign('category_product_movie_id_foreign');
