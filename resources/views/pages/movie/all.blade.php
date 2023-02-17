@@ -7,10 +7,10 @@
     <ul>
         @foreach ($movies as $movie)
             <li>
-                Nome Film:{{ $movie -> name }} 
+                Nome Film: {{ $movie -> name }} 
                 <br>
-                Anno:{{ $movie -> year }}
-                Cashout:{{ $movie -> cashOut ? "YES" : "NO" }}
+                Anno: {{ $movie -> year }}
+                Cashout: {{ $movie -> cashOut ? "YES" : "NO" }}
             </li>
         @endforeach
     </ul>  
