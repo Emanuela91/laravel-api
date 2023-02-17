@@ -42,11 +42,12 @@ class MainController extends Controller
             'genre_id' => 'required|integer|min:1',
         ]);
 
+        dd($data);
 
         $genre = Genre::find($data['genre_id']);
 
         $movie = Movie::make($data);
-        $movie->genre()->associate('$movie');
+        $movie->genre()->associate($genre);
 
         $movie->save();
         return redirect()->route('movie.all');
