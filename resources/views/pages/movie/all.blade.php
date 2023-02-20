@@ -6,12 +6,7 @@
     {{-- stampati a schermo i film --}}
     <ul>
         @foreach ($movies as $movie)
-            <li>
-                Nome Film: {{ $movie -> name }} 
-                <br>
-                Anno: {{ $movie -> year }}
-                Cashout: {{ $movie -> cashOut ? "YES" : "NO" }}
-            </li>
+          @include('components.movie.list-item')  
         @endforeach
     </ul>  
 @endsection
