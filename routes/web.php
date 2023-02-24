@@ -32,10 +32,3 @@ Route::post('/movie/edit/{movie}', [MainController::class, 'movieUpdate'])
 
 Route::get('/movie/delete/{movie}', [MainController::class, 'movieDelete'])
     ->name('movie.delete');
-
-
-// questo va in route/api
-
-use App\Http\Controllers\ApiController;
-
-Route::get('/api/v1/movie/all', [ApiController::class, 'movieAll']);
