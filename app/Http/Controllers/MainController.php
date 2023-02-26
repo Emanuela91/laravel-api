@@ -24,6 +24,7 @@ class MainController extends Controller
     public function movieAll()
     {
         $movies = Movie::all();
+        $movies = Movie::orderBy('created_at', 'DESC')->get();
 
         return view('pages.movie.all', compact('movies'));
     }
@@ -60,7 +61,7 @@ class MainController extends Controller
         $tags = Tag::find($data['tags_id']);
         $movie->tags()->sync($tags);
 
-        return redirect()->route('home');
+        return redirect()->route('movie.all');
     }
 
     public function movieEdit(Movie $movie)
